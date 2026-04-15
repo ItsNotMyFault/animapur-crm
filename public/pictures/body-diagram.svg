@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 400" width="200" height="400">
+  <defs>
+    <style>
+      .outline { fill: none; stroke: #334155; stroke-width: 1.5; stroke-linejoin: round; }
+      .label { font: 10px system-ui, sans-serif; fill: #64748b; }
+    </style>
+  </defs>
+
+  <!-- Head -->
+  <circle cx="100" cy="35" r="20" class="outline" />
+
+  <!-- Neck -->
+  <path d="M 92 52 L 92 65 L 108 65 L 108 52" class="outline" />
+
+  <!-- Torso -->
+  <path d="M 70 68
+           Q 65 75 62 90
+           L 58 160
+           Q 60 200 65 230
+           L 135 230
+           Q 140 200 142 160
+           L 138 90
+           Q 135 75 130 68 Z"
+        class="outline" />
+
+  <!-- Arms -->
+  <path d="M 62 90 Q 45 110 40 150 Q 38 180 42 210 Q 44 225 50 235" class="outline" />
+  <path d="M 138 90 Q 155 110 160 150 Q 162 180 158 210 Q 156 225 150 235" class="outline" />
+
+  <!-- Legs -->
+  <path d="M 75 230 Q 72 280 70 330 Q 68 360 72 385 L 90 385 Q 92 360 94 330 Q 96 280 98 240" class="outline" />
+  <path d="M 125 230 Q 128 280 130 330 Q 132 360 128 385 L 110 385 Q 108 360 106 330 Q 104 280 102 240" class="outline" />
+
+  <!-- Center line hint -->
+  <line x1="100" y1="68" x2="100" y2="230" stroke="#cbd5e1" stroke-width="0.5" stroke-dasharray="2 3" />
+
+  <text x="100" y="398" text-anchor="middle" class="label">Face avant</text>
+</svg>

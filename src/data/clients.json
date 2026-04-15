@@ -1,0 +1,71 @@
+[
+  {
+    "id": "1",
+    "name": "Alice Martin",
+    "email": "alice.martin@example.com",
+    "phone": "+33 6 12 34 56 78",
+    "address": "12 rue des Lilas, 75011 Paris",
+    "dateOfBirth": "1988-05-14",
+    "preferredPressure": "medium",
+    "healthNotes": "Chronic lower-back tension. Avoid deep pressure on lumbar area.",
+    "sessions": [
+      { "date": "2026-03-18", "type": "Swedish", "duration": 60, "therapist": "Claire" },
+      { "date": "2026-02-10", "type": "Deep tissue", "duration": 90, "therapist": "Claire" }
+    ]
+  },
+  {
+    "id": "2",
+    "name": "Benoît Dubois",
+    "email": "benoit.dubois@example.com",
+    "phone": "+33 6 22 45 67 89",
+    "address": "5 avenue Victor Hugo, 69006 Lyon",
+    "dateOfBirth": "1975-11-02",
+    "preferredPressure": "firm",
+    "healthNotes": "Recovering from shoulder surgery (2025). Avoid right rotator cuff.",
+    "sessions": [
+      { "date": "2026-04-01", "type": "Sports recovery", "duration": 60, "therapist": "Marc" }
+    ]
+  },
+  {
+    "id": "3",
+    "name": "Clara Nguyen",
+    "email": "clara.nguyen@example.com",
+    "phone": "+33 6 33 56 78 90",
+    "address": "88 boulevard Saint-Michel, 33000 Bordeaux",
+    "dateOfBirth": "1992-07-21",
+    "preferredPressure": "light",
+    "healthNotes": "Stress-related tension. Prefers a quiet room with low lighting.",
+    "sessions": [
+      { "date": "2026-03-22", "type": "Relaxation", "duration": 75, "therapist": "Claire" },
+      { "date": "2026-02-05", "type": "Relaxation", "duration": 60, "therapist": "Claire" },
+      { "date": "2026-01-12", "type": "Aromatherapy", "duration": 60, "therapist": "Claire" }
+    ]
+  },
+  {
+    "id": "4",
+    "name": "David Rousseau",
+    "email": "david.rousseau@example.com",
+    "phone": "+33 6 44 67 89 01",
+    "address": "22 rue de la Paix, 44000 Nantes",
+    "dateOfBirth": "1980-02-28",
+    "preferredPressure": "firm",
+    "healthNotes": "Runner. Tight hamstrings and calves. No known allergies.",
+    "sessions": [
+      { "date": "2026-04-05", "type": "Sports recovery", "duration": 90, "therapist": "Marc" },
+      { "date": "2026-03-08", "type": "Deep tissue", "duration": 60, "therapist": "Marc" }
+    ]
+  },
+  {
+    "id": "5",
+    "name": "Emma Laurent",
+    "email": "emma.laurent@example.com",
+    "phone": "+33 6 55 78 90 12",
+    "address": "3 place Bellecour, 31000 Toulouse",
+    "dateOfBirth": "1995-09-09",
+    "preferredPressure": "medium",
+    "healthNotes": "Pregnant (second trimester). Prenatal massage only, side-lying.",
+    "sessions": [
+      { "date": "2026-04-10", "type": "Prenatal", "duration": 60, "therapist": "Claire" }
+    ]
+  }
+]

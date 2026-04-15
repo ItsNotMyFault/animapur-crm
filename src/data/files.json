@@ -1,0 +1,154 @@
+[
+  {
+    "id": "f1",
+    "clientId": "1",
+    "formName": "client-intake",
+    "label": "Fiche d'accueil",
+    "createdAt": "2026-01-20",
+    "payload": {
+      "fullName": "Alice Martin",
+      "email": "alice.martin@example.com",
+      "phone": "+33 6 12 34 56 78",
+      "dateOfBirth": "1988-05-14",
+      "address": "12 rue des Lilas, 75011 Paris",
+      "conditions": "Tensions lombaires chroniques, anciens problèmes de sciatique.",
+      "pressurePreference": "medium",
+      "consent": true
+    }
+  },
+  {
+    "id": "f2",
+    "clientId": "1",
+    "formName": "session-note",
+    "label": "Séance du 10 février 2026",
+    "createdAt": "2026-02-10",
+    "payload": {
+      "sessionNumber": 2,
+      "date": "2026-02-10",
+      "duration": 90,
+      "techniques": ["deep", "swedish"],
+      "treatedZones": "Bas du dos, fessiers, ischios.",
+      "clientReaction": "Coopérant",
+      "evolution": "Stable",
+      "evolutionDetails": "Tensions toujours présentes mais moins aiguës.",
+      "observations": "Attention à ne pas trop appuyer sur L4-L5.",
+      "recommendations": "Étirements quotidiens. Hydratation.",
+      "additionalNotes": "",
+      "therapistName": "Claire Dubois"
+    }
+  },
+  {
+    "id": "f3",
+    "clientId": "1",
+    "formName": "session-note",
+    "label": "Séance du 18 mars 2026",
+    "createdAt": "2026-03-18",
+    "payload": {
+      "sessionNumber": 3,
+      "date": "2026-03-18",
+      "duration": 60,
+      "techniques": ["swedish"],
+      "treatedZones": "Dos, épaules, nuque.",
+      "clientReaction": "Détendu",
+      "evolution": "Amélioration",
+      "evolutionDetails": "Mobilité accrue dans la zone lombaire.",
+      "observations": "Le client rapporte une nuit de meilleur sommeil après la séance précédente.",
+      "recommendations": "Maintenir la fréquence d'une séance toutes les trois semaines.",
+      "additionalNotes": "Prochaine séance prévue début avril.",
+      "therapistName": "Claire Dubois"
+    }
+  },
+  {
+    "id": "f4",
+    "clientId": "2",
+    "formName": "client-intake",
+    "label": "Fiche d'accueil",
+    "createdAt": "2026-03-01",
+    "payload": {
+      "fullName": "Benoît Dubois",
+      "email": "benoit.dubois@example.com",
+      "phone": "+33 6 22 45 67 89",
+      "dateOfBirth": "1975-11-02",
+      "address": "5 avenue Victor Hugo, 69006 Lyon",
+      "conditions": "Post-opération épaule droite (2025). Éviter coiffe des rotateurs.",
+      "pressurePreference": "firm",
+      "consent": true
+    }
+  },
+  {
+    "id": "f5",
+    "clientId": "2",
+    "formName": "session-note",
+    "label": "Séance du 1er avril 2026",
+    "createdAt": "2026-04-01",
+    "payload": {
+      "sessionNumber": 1,
+      "date": "2026-04-01",
+      "duration": 60,
+      "techniques": ["sports"],
+      "treatedZones": "Épaule gauche, trapèzes.",
+      "clientReaction": "Coopérant",
+      "evolution": "Amélioration",
+      "evolutionDetails": "Première séance post-rééducation.",
+      "observations": "Aucun travail sur la coiffe droite.",
+      "recommendations": "Poursuivre les exercices prescrits par le kiné.",
+      "additionalNotes": "",
+      "therapistName": "Marc Lambert"
+    }
+  },
+  {
+    "id": "f6",
+    "clientId": "3",
+    "formName": "client-intake",
+    "label": "Fiche d'accueil",
+    "createdAt": "2025-11-19",
+    "payload": {
+      "fullName": "Clara Nguyen",
+      "email": "clara.nguyen@example.com",
+      "phone": "+33 6 33 56 78 90",
+      "dateOfBirth": "1992-07-21",
+      "address": "88 boulevard Saint-Michel, 33000 Bordeaux",
+      "conditions": "Stress chronique, insomnie occasionnelle.",
+      "pressurePreference": "light",
+      "consent": true
+    }
+  },
+  {
+    "id": "f7",
+    "clientId": "4",
+    "formName": "session-note",
+    "label": "Séance du 5 avril 2026",
+    "createdAt": "2026-04-05",
+    "payload": {
+      "sessionNumber": 2,
+      "date": "2026-04-05",
+      "duration": 90,
+      "techniques": ["sports", "deep"],
+      "treatedZones": "Ischio-jambiers, mollets, bande ilio-tibiale.",
+      "clientReaction": "Agité",
+      "evolution": "Stable",
+      "evolutionDetails": "Tension marquée après un semi-marathon.",
+      "observations": "Travail profond nécessaire.",
+      "recommendations": "Jours de repos avant la prochaine séance longue.",
+      "additionalNotes": "",
+      "therapistName": "Marc Lambert"
+    }
+  },
+  {
+    "id": "f8",
+    "clientId": "5",
+    "formName": "client-intake",
+    "label": "Fiche d'accueil (prénatal)",
+    "createdAt": "2026-03-28",
+    "payload": {
+      "fullName": "Emma Laurent",
+      "email": "emma.laurent@example.com",
+      "phone": "+33 6 55 78 90 12",
+      "dateOfBirth": "1995-09-09",
+      "address": "3 place Bellecour, 31000 Toulouse",
+      "conditions": "Enceinte, deuxième trimestre. Massage prénatal uniquement, position latérale.",
+      "pressurePreference": "medium",
+      "consent": true
+    }
+  }
+]
