@@ -37,7 +37,7 @@ const features = [
     </header>
 
     <main class="flex-1">
-      <section class="max-w-6xl mx-auto px-6 py-24 text-center">
+      <section class="max-w-6xl mx-auto px-6 py-12 text-center">
         <h1 class="text-5xl font-bold tracking-tight mb-6 text-slate-900">
           A calm space for your<br />
           <span class="text-primary">client history.</span>
@@ -64,7 +64,7 @@ const features = [
         </div>
       </section>
 
-      <section class="max-w-6xl mx-auto px-6 pb-24 grid md:grid-cols-3 gap-6">
+      <section class="max-w-6xl mx-auto px-6 pb-12 grid md:grid-cols-3 gap-6">
         <UCard v-for="feature in features" :key="feature.title">
           <div class="flex flex-col gap-3">
             <UIcon :name="feature.icon" class="size-8 text-primary" />
