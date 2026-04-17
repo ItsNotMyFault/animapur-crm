@@ -1,19 +1,32 @@
 <script setup lang="ts">
-import { computed, h, ref, resolveComponent } from 'vue'
+import { computed, h, onMounted, ref, resolveComponent } from 'vue'
 import type { TableColumn } from '@nuxt/ui'
-import clients from '@/data/clients.json'
-import files from '@/data/files.json'
+import type { Client, ClientFile } from '@/types'
+import { clientRepo, fileRepo } from '@/repositories'
 import { getFormByName } from '@/forms/registry'
 import FormPreviewModal from '@/forms/FormPreviewModal.vue'
 
-type ClientFile = (typeof files)[number]
-
 const props = defineProps<{ id: string }>()
 
-const client = computed(() => clients.find((c) => c.id === props.id))
-const clientFiles = computed(() => files.filter((f) => f.clientId === props.id))
-
 const UButton = resolveComponent('UButton')
+
+const client = ref<Client | null>(null)
+const clientFiles = ref<ClientFile[]>([])
+const loading = ref(true)
+
+onMounted(async () => {
+  const [c, f] = await Promise.all([
+    clientRepo.get(props.id).catch(() => null),
+    fileRepo.getByClientId(props.id),
+  ])
+  client.value = c
+  clientFiles.value = f
+  loading.value = false
+})
+
+const clientName = computed(() =>
+  client.value ? `${client.value.firstName} ${client.value.lastName}` : '',
+)
 
 const previewOpen = ref(false)
 const activeFile = ref<ClientFile | null>(null)
@@ -26,19 +39,22 @@ function preview(file: ClientFile) {
 const activeSchema = computed(() =>
   activeFile.value ? getFormByName(activeFile.value.formName) : undefined,
 )
-
-const activePayload = computed(() =>
-  activeFile.value ? (activeFile.value.payload as Record<string, unknown>) : undefined,
-)
-
+const activePayload = computed(() => activeFile.value?.payload)
 const activeLabel = computed(() => activeFile.value?.label ?? '')
-
 const activeFilename = computed(() =>
   activeFile.value ? `${activeFile.value.formName}-${activeFile.value.id}` : undefined,
 )
 
 const columns: TableColumn<ClientFile>[] = [
-  { accessorKey: 'label', header: 'Document' },
+  {
+    accessorKey: 'label',
+    header: 'Document',
+    cell: ({ row }) =>
+      h('div', { class: 'flex items-center gap-2' }, [
+        h('span', { class: 'i-lucide-file-text size-4 text-primary shrink-0' }),
+        h('span', { class: 'font-medium' }, row.original.label),
+      ]),
+  },
   {
     accessorKey: 'formName',
     header: 'Formulaire',
@@ -62,35 +78,20 @@ const columns: TableColumn<ClientFile>[] = [
 </script>
 
 <template>
-  <div class="p-6 space-y-6">
-    <div>
-      <UButton
-        :to="`/app/clients/${props.id}`"
-        variant="link"
-        color="neutral"
-        icon="i-lucide-arrow-left"
-        label="Retour à la fiche client"
-        :padded="false"
-      />
-      <h2 class="text-2xl font-semibold mt-2">
-        Dossiers
-        <span v-if="client" class="text-muted font-normal">— {{ client.name }}</span>
-      </h2>
-      <p class="text-muted text-sm">{{ clientFiles.length }} document(s)</p>
-    </div>
-
-    <UCard>
-      <UTable :data="clientFiles" :columns="columns" />
-    </UCard>
-
+  <div class="p-5">
     <UCard>
       <template #header>
-        <div class="flex items-center gap-2">
-          <UIcon name="i-lucide-code" class="text-muted" />
-          <span class="font-medium text-sm">Raw JSON</span>
-        </div>
+        <span v-if="client" class="text-sm text-muted">{{ clientFiles.length }} document(s) pour {{ clientName }}</span>
       </template>
-      <pre class="text-xs overflow-auto">{{ JSON.stringify(clientFiles, null, 2) }}</pre>
+
+      <UTable :data="clientFiles" :columns="columns" :loading="loading">
+        <template #empty>
+          <div class="text-center py-8 text-muted">
+            <UIcon name="i-lucide-folder-open" class="size-8 mx-auto mb-2 opacity-40" />
+            <p class="text-sm">Aucun document pour ce client.</p>
+          </div>
+        </template>
+      </UTable>
     </UCard>
 
     <FormPreviewModal
@@ -100,7 +101,7 @@ const columns: TableColumn<ClientFile>[] = [
       :label="activeLabel"
       :filename="activeFilename"
       :recipient-email="client?.email"
-      :recipient-name="client?.name"
+      :recipient-name="clientName"
     />
   </div>
 </template>

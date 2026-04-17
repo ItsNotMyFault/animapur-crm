@@ -4,11 +4,6 @@ import { formRegistry } from '@/forms/registry'
 
 <template>
   <div class="p-6 space-y-6">
-    <div>
-      <h2 class="text-xl font-semibold">Formulaires</h2>
-      <p class="text-muted text-sm">Formulaires disponibles pour les clients et le personnel.</p>
-    </div>
-
     <div class="grid md:grid-cols-2 gap-4">
       <UCard v-for="form in formRegistry" :key="form.name">
         <template #header>

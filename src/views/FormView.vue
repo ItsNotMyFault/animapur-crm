@@ -38,79 +38,61 @@ async function handleExport() {
     </div>
 
     <template v-else>
-      <div class="flex items-start justify-between gap-4">
-        <div>
-          <UButton
-            to="/app/forms"
-            variant="link"
-            color="neutral"
-            icon="i-lucide-arrow-left"
-            label="Retour aux formulaires"
-            :padded="false"
-          />
-          <h2 class="text-2xl font-semibold mt-2">{{ form.label }}</h2>
-          <p v-if="form.description" class="text-muted">{{ form.description }}</p>
-        </div>
-
-        <div class="flex items-center gap-2 shrink-0">
-          <UButtonGroup>
-            <UButton
-              :color="mode === 'form' ? 'primary' : 'neutral'"
-              :variant="mode === 'form' ? 'solid' : 'outline'"
-              icon="i-lucide-pencil"
-              label="Formulaire"
-              @click="mode = 'form'"
-            />
-            <UButton
-              :color="mode === 'report' ? 'primary' : 'neutral'"
-              :variant="mode === 'report' ? 'solid' : 'outline'"
-              icon="i-lucide-file-text"
-              label="Rapport"
-              @click="mode = 'report'"
-            />
-          </UButtonGroup>
-          <UButton
-            icon="i-lucide-download"
-            color="primary"
-            variant="outline"
-            :loading="exporting"
-            label="Exporter PDF"
-            @click="handleExport"
-          />
-        </div>
-      </div>
-
-      <div ref="pdfRoot" class="bg-white p-6 rounded-lg">
-        <div v-if="mode === 'report'" class="mb-6 pb-4 border-b border-slate-200">
-          <h1 class="text-2xl font-semibold">{{ form.label }}</h1>
-          <p v-if="form.description" class="text-sm text-muted mt-1">{{ form.description }}</p>
-        </div>
-        <FormRenderer
-          :schema="form"
-          :initial-data="submittedData ?? undefined"
-          :display-mode="mode"
-          @submit="onSubmit"
-        />
-      </div>
-
-      <UCard v-if="submittedData">
-        <template #header>
-          <div class="flex items-center gap-2">
-            <UIcon name="i-lucide-check-circle" class="text-primary" />
-            <span class="font-medium">Données soumises</span>
-          </div>
-        </template>
-        <pre class="text-xs overflow-auto">{{ JSON.stringify(submittedData, null, 2) }}</pre>
-      </UCard>
-
       <UCard>
         <template #header>
-          <div class="flex items-center gap-2">
-            <UIcon name="i-lucide-code" class="text-muted" />
-            <span class="font-medium text-sm">FormSchema (UI + DATA)</span>
+          <div class="flex items-center justify-between gap-4">
+            <p v-if="form.description" class="text-muted text-sm">{{ form.description }}</p>
+
+            <div class="flex items-center gap-2 shrink-0">
+              <UButtonGroup>
+                <UButton
+                  :color="mode === 'form' ? 'primary' : 'neutral'"
+                  :variant="mode === 'form' ? 'solid' : 'outline'"
+                  icon="i-lucide-pencil"
+                  label="Formulaire"
+                  @click="mode = 'form'"
+                />
+                <UButton
+                  :color="mode === 'report' ? 'primary' : 'neutral'"
+                  :variant="mode === 'report' ? 'solid' : 'outline'"
+                  icon="i-lucide-file-text"
+                  label="Rapport"
+                  @click="mode = 'report'"
+                />
+              </UButtonGroup>
+              <UButton
+                icon="i-lucide-download"
+                color="primary"
+                variant="outline"
+                :loading="exporting"
+                label="Exporter PDF"
+                @click="handleExport"
+              />
+            </div>
           </div>
         </template>
-        <pre class="text-xs overflow-auto">{{ JSON.stringify(form, null, 2) }}</pre>
+
+        <div ref="pdfRoot" class="p-2">
+          <div v-if="mode === 'report'" class="mb-6 pb-4 border-b border-slate-200">
+            <h1 class="text-2xl font-semibold">{{ form.label }}</h1>
+            <p v-if="form.description" class="text-sm text-muted mt-1">{{ form.description }}</p>
+          </div>
+          <FormRenderer
+            :schema="form"
+            :initial-data="submittedData ?? undefined"
+            :display-mode="mode"
+            @submit="onSubmit"
+          />
+        </div>
+
+        <template v-if="submittedData" #footer>
+          <UAlert
+            color="success"
+            icon="i-lucide-check-circle"
+            title="Formulaire soumis"
+            description="Les données ont été enregistrées. Consultez le rapport ou exportez en PDF."
+          />
+        </template>
       </UCard>
     </template>
   </div>

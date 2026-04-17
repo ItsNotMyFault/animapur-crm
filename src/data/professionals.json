@@ -1,0 +1,35 @@
+[
+  {
+    "id": "p1",
+    "firstName": "Claire",
+    "lastName": "Dubois",
+    "email": "claire.dubois@animapur.fr",
+    "phone": "+33 6 70 11 22 33",
+    "category": "health",
+    "subType": "therapist",
+    "specialty": "Massothérapie relaxation & prénatal",
+    "active": true
+  },
+  {
+    "id": "p2",
+    "firstName": "Marc",
+    "lastName": "Lambert",
+    "email": "marc.lambert@animapur.fr",
+    "phone": "+33 6 70 44 55 66",
+    "category": "health",
+    "subType": "therapist",
+    "specialty": "Massothérapie sportive & tissus profonds",
+    "active": true
+  },
+  {
+    "id": "p3",
+    "firstName": "Sophie",
+    "lastName": "Moreau",
+    "email": "sophie.moreau@animapur.fr",
+    "phone": "+33 6 70 77 88 99",
+    "category": "admin",
+    "subType": "receptionist",
+    "specialty": null,
+    "active": true
+  }
+]

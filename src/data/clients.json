@@ -1,71 +1,230 @@
 [
   {
     "id": "1",
-    "name": "Alice Martin",
-    "email": "alice.martin@example.com",
-    "phone": "+33 6 12 34 56 78",
-    "address": "12 rue des Lilas, 75011 Paris",
+    "firstName": "Alice",
+    "lastName": "Martin",
     "dateOfBirth": "1988-05-14",
+    "gender": "female",
+    "phone": "+33 6 12 34 56 78",
+    "email": "alice.martin@example.com",
+    "preferredContact": "email",
+    "address": "12 rue des Lilas, 75011 Paris",
+    "profilePhotoUrl": null,
+    "intakeDate": "2026-01-20",
+    "referringPhysician": "Dr. Élise Faure",
+    "referringClinic": "Centre Médical Bastille",
     "preferredPressure": "medium",
-    "healthNotes": "Chronic lower-back tension. Avoid deep pressure on lumbar area.",
+    "emergencyContact": {
+      "name": "Thomas Martin",
+      "relationship": "Conjoint",
+      "phone": "+33 6 98 76 54 32"
+    },
+    "medicalProfile": {
+      "primaryDiagnosis": "Lombalgie chronique",
+      "icd10Code": "M54.5",
+      "secondaryConditions": "Sciatique intermittente gauche",
+      "medications": "Ibuprofène 400 mg au besoin",
+      "allergies": "Aucune connue",
+      "surgicalHistory": null,
+      "contraindications": "Éviter pression profonde zone lombaire L4-L5",
+      "painBaseline": 5,
+      "functionalGoals": "Réduire les douleurs lombaires à 2/10, retrouver une mobilité complète pour la course à pied.",
+      "physicianNotes": "Patiente adressée pour gestion de la douleur chronique lombaire. Pas de contre-indication au massage."
+    },
+    "notes": [
+      {
+        "id": "n1",
+        "author": "Claire Dubois",
+        "note": "Préfère une salle calme avec éclairage tamisé.",
+        "flagged": false,
+        "createdAt": "2026-01-20"
+      },
+      {
+        "id": "n2",
+        "author": "Claire Dubois",
+        "note": "Signale une recrudescence des douleurs en fin de journée de travail.",
+        "flagged": true,
+        "createdAt": "2026-03-18"
+      }
+    ],
     "sessions": [
-      { "date": "2026-03-18", "type": "Swedish", "duration": 60, "therapist": "Claire" },
-      { "date": "2026-02-10", "type": "Deep tissue", "duration": 90, "therapist": "Claire" }
+      { "date": "2026-03-18", "type": "Suédois", "duration": 60, "professional": "Claire Dubois" },
+      { "date": "2026-02-10", "type": "Tissus profonds", "duration": 90, "professional": "Claire Dubois" }
     ]
   },
   {
     "id": "2",
-    "name": "Benoît Dubois",
-    "email": "benoit.dubois@example.com",
-    "phone": "+33 6 22 45 67 89",
-    "address": "5 avenue Victor Hugo, 69006 Lyon",
+    "firstName": "Benoît",
+    "lastName": "Dubois",
     "dateOfBirth": "1975-11-02",
+    "gender": "male",
+    "phone": "+33 6 22 45 67 89",
+    "email": "benoit.dubois@example.com",
+    "preferredContact": "phone",
+    "address": "5 avenue Victor Hugo, 69006 Lyon",
+    "profilePhotoUrl": null,
+    "intakeDate": "2026-03-01",
+    "referringPhysician": "Dr. Philippe Renard",
+    "referringClinic": null,
     "preferredPressure": "firm",
-    "healthNotes": "Recovering from shoulder surgery (2025). Avoid right rotator cuff.",
+    "emergencyContact": {
+      "name": "Nathalie Dubois",
+      "relationship": "Épouse",
+      "phone": "+33 6 33 22 11 00"
+    },
+    "medicalProfile": {
+      "primaryDiagnosis": "Post-opération épaule droite (coiffe des rotateurs)",
+      "icd10Code": "M75.1",
+      "secondaryConditions": null,
+      "medications": null,
+      "allergies": "Latex",
+      "surgicalHistory": "Réparation coiffe des rotateurs droite, décembre 2025",
+      "contraindications": "Aucun travail sur la coiffe des rotateurs droite. Utiliser gants sans latex.",
+      "painBaseline": 4,
+      "functionalGoals": "Retrouver une amplitude complète de l'épaule droite, reprendre la natation.",
+      "physicianNotes": "Rééducation post-opératoire terminée. Massage autorisé sauf zone opérée directe."
+    },
+    "notes": [
+      {
+        "id": "n3",
+        "author": "Marc Lambert",
+        "note": "Attention: allergie au latex — utiliser des gants nitrile.",
+        "flagged": true,
+        "createdAt": "2026-03-01"
+      }
+    ],
     "sessions": [
-      { "date": "2026-04-01", "type": "Sports recovery", "duration": 60, "therapist": "Marc" }
+      { "date": "2026-04-01", "type": "Sportif", "duration": 60, "professional": "Marc Lambert" }
     ]
   },
   {
     "id": "3",
-    "name": "Clara Nguyen",
-    "email": "clara.nguyen@example.com",
-    "phone": "+33 6 33 56 78 90",
-    "address": "88 boulevard Saint-Michel, 33000 Bordeaux",
+    "firstName": "Clara",
+    "lastName": "Nguyen",
     "dateOfBirth": "1992-07-21",
+    "gender": "female",
+    "phone": "+33 6 33 56 78 90",
+    "email": "clara.nguyen@example.com",
+    "preferredContact": "sms",
+    "address": "88 boulevard Saint-Michel, 33000 Bordeaux",
+    "profilePhotoUrl": null,
+    "intakeDate": "2025-11-19",
+    "referringPhysician": null,
+    "referringClinic": null,
     "preferredPressure": "light",
-    "healthNotes": "Stress-related tension. Prefers a quiet room with low lighting.",
+    "emergencyContact": {
+      "name": "Linh Nguyen",
+      "relationship": "Mère",
+      "phone": "+33 6 44 33 22 11"
+    },
+    "medicalProfile": {
+      "primaryDiagnosis": "Stress chronique avec tension musculaire",
+      "icd10Code": "F43.8",
+      "secondaryConditions": "Insomnie occasionnelle",
+      "medications": "Magnésium, mélatonine",
+      "allergies": "Huile d'amande",
+      "surgicalHistory": null,
+      "contraindications": "Ne pas utiliser d'huile d'amande (allergie).",
+      "painBaseline": 3,
+      "functionalGoals": "Diminuer le stress, améliorer la qualité du sommeil.",
+      "physicianNotes": null
+    },
+    "notes": [
+      {
+        "id": "n4",
+        "author": "Claire Dubois",
+        "note": "Préfère un environnement calme, lumière basse.",
+        "flagged": false,
+        "createdAt": "2025-11-19"
+      }
+    ],
     "sessions": [
-      { "date": "2026-03-22", "type": "Relaxation", "duration": 75, "therapist": "Claire" },
-      { "date": "2026-02-05", "type": "Relaxation", "duration": 60, "therapist": "Claire" },
-      { "date": "2026-01-12", "type": "Aromatherapy", "duration": 60, "therapist": "Claire" }
+      { "date": "2026-03-22", "type": "Relaxation", "duration": 75, "professional": "Claire Dubois" },
+      { "date": "2026-02-05", "type": "Relaxation", "duration": 60, "professional": "Claire Dubois" },
+      { "date": "2026-01-12", "type": "Aromathérapie", "duration": 60, "professional": "Claire Dubois" }
     ]
   },
   {
     "id": "4",
-    "name": "David Rousseau",
-    "email": "david.rousseau@example.com",
-    "phone": "+33 6 44 67 89 01",
-    "address": "22 rue de la Paix, 44000 Nantes",
+    "firstName": "David",
+    "lastName": "Rousseau",
     "dateOfBirth": "1980-02-28",
+    "gender": "male",
+    "phone": "+33 6 44 67 89 01",
+    "email": "david.rousseau@example.com",
+    "preferredContact": "email",
+    "address": "22 rue de la Paix, 44000 Nantes",
+    "profilePhotoUrl": null,
+    "intakeDate": "2026-02-15",
+    "referringPhysician": "Dr. Anne Lefèvre",
+    "referringClinic": "Clinique du Sport Nantes",
     "preferredPressure": "firm",
-    "healthNotes": "Runner. Tight hamstrings and calves. No known allergies.",
+    "emergencyContact": {
+      "name": "Julie Rousseau",
+      "relationship": "Épouse",
+      "phone": "+33 6 55 44 33 22"
+    },
+    "medicalProfile": {
+      "primaryDiagnosis": "Syndrome des ischio-jambiers du coureur",
+      "icd10Code": "M76.8",
+      "secondaryConditions": "Syndrome de la bandelette ilio-tibiale",
+      "medications": null,
+      "allergies": null,
+      "surgicalHistory": null,
+      "contraindications": null,
+      "painBaseline": 6,
+      "functionalGoals": "Reprendre les semi-marathons sans douleur. Réduire les tensions post-course.",
+      "physicianNotes": "Coureur régulier (50 km/semaine). Massage profond recommandé."
+    },
+    "notes": [],
     "sessions": [
-      { "date": "2026-04-05", "type": "Sports recovery", "duration": 90, "therapist": "Marc" },
-      { "date": "2026-03-08", "type": "Deep tissue", "duration": 60, "therapist": "Marc" }
+      { "date": "2026-04-05", "type": "Sportif", "duration": 90, "professional": "Marc Lambert" },
+      { "date": "2026-03-08", "type": "Tissus profonds", "duration": 60, "professional": "Marc Lambert" }
     ]
   },
   {
     "id": "5",
-    "name": "Emma Laurent",
-    "email": "emma.laurent@example.com",
-    "phone": "+33 6 55 78 90 12",
-    "address": "3 place Bellecour, 31000 Toulouse",
+    "firstName": "Emma",
+    "lastName": "Laurent",
     "dateOfBirth": "1995-09-09",
+    "gender": "female",
+    "phone": "+33 6 55 78 90 12",
+    "email": "emma.laurent@example.com",
+    "preferredContact": "sms",
+    "address": "3 place Bellecour, 31000 Toulouse",
+    "profilePhotoUrl": null,
+    "intakeDate": "2026-03-28",
+    "referringPhysician": "Dr. Marie Blanc",
+    "referringClinic": null,
     "preferredPressure": "medium",
-    "healthNotes": "Pregnant (second trimester). Prenatal massage only, side-lying.",
+    "emergencyContact": {
+      "name": "Lucas Laurent",
+      "relationship": "Conjoint",
+      "phone": "+33 6 66 55 44 33"
+    },
+    "medicalProfile": {
+      "primaryDiagnosis": "Grossesse — deuxième trimestre",
+      "icd10Code": "Z34.0",
+      "secondaryConditions": "Douleurs lombaires liées à la grossesse",
+      "medications": "Acide folique, fer",
+      "allergies": null,
+      "surgicalHistory": null,
+      "contraindications": "Massage prénatal uniquement. Position latérale obligatoire. Pas de pression abdominale.",
+      "painBaseline": 4,
+      "functionalGoals": "Soulager les tensions lombaires et améliorer le confort pendant la grossesse.",
+      "physicianNotes": "Grossesse sans complication. Massage prénatal autorisé avec précautions habituelles."
+    },
+    "notes": [
+      {
+        "id": "n5",
+        "author": "Claire Dubois",
+        "note": "Terme prévu mi-juillet 2026. Adapter la position et l'intensité à chaque visite.",
+        "flagged": true,
+        "createdAt": "2026-03-28"
+      }
+    ],
     "sessions": [
-      { "date": "2026-04-10", "type": "Prenatal", "duration": 60, "therapist": "Claire" }
+      { "date": "2026-04-10", "type": "Prénatal", "duration": 60, "professional": "Claire Dubois" }
     ]
   }
 ]
