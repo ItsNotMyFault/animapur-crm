@@ -22,10 +22,10 @@ const features = [
 </script>
 
 <template>
-  <div class="min-h-screen flex flex-col bg-white">
-    <header class="border-b border-default bg-white">
+  <div class="min-h-screen flex flex-col bg-slate-300">
+    <header class="shrink-0 bg-slate-300">
       <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <div class="flex items-center gap-2 font-semibold">
+        <div class="flex items-center gap-2 font-semibold text-slate-900">
           <UIcon name="i-lucide-hand-heart" class="size-6 text-primary" />
           <span>Animapur CRM</span>
         </div>
@@ -36,8 +36,9 @@ const features = [
       </div>
     </header>
 
-    <main class="flex-1">
-      <section class="max-w-6xl mx-auto px-6 py-12 text-center">
+    <main class="flex-1 flex flex-col px-6 pb-6 gap-6 max-w-6xl mx-auto w-full">
+      <!-- Hero card -->
+      <div class="bg-white rounded-2xl shadow-sm p-12 text-center">
         <h1 class="text-5xl font-bold tracking-tight mb-6 text-slate-900">
           A calm space for your<br />
           <span class="text-primary">client history.</span>
@@ -62,20 +63,23 @@ const features = [
             label="See the forms"
           />
         </div>
-      </section>
+      </div>
 
-      <section class="max-w-6xl mx-auto px-6 pb-12 grid md:grid-cols-3 gap-6">
-        <UCard v-for="feature in features" :key="feature.title">
-          <div class="flex flex-col gap-3">
-            <UIcon :name="feature.icon" class="size-8 text-primary" />
-            <h3 class="text-lg font-semibold">{{ feature.title }}</h3>
-            <p class="text-muted">{{ feature.description }}</p>
-          </div>
-        </UCard>
-      </section>
+      <!-- Feature cards -->
+      <div class="grid md:grid-cols-3 gap-6 flex-1">
+        <div
+          v-for="feature in features"
+          :key="feature.title"
+          class="bg-white rounded-2xl shadow-sm p-6 flex flex-col gap-3"
+        >
+          <UIcon :name="feature.icon" class="size-8 text-primary" />
+          <h3 class="text-lg font-semibold text-slate-900">{{ feature.title }}</h3>
+          <p class="text-muted">{{ feature.description }}</p>
+        </div>
+      </div>
     </main>
 
-    <footer class="border-t border-default py-6 text-center text-sm text-muted">
+    <footer class="shrink-0 py-4 text-center text-sm text-slate-500">
       Animapur CRM · built for therapists
     </footer>
   </div>

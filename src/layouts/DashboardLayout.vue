@@ -48,17 +48,17 @@ const userMenuItems = computed<DropdownMenuItem[][]>(() => [
       collapsible
       resizable
       :ui="{
-        root: 'bg-slate-400 border-r-0',
-        header: 'h-12 bg-slate-400 border-b-0',
-        footer: 'bg-slate-400 border-t-0',
+        root: 'bg-shell border-r-0',
+        header: 'h-12 bg-shell border-b-0',
+        footer: 'bg-shell border-t-0',
       }"
     >
       <template #header>
         <div class="flex items-center gap-2.5 font-semibold">
           <div class="size-7 rounded-lg bg-primary flex items-center justify-center">
-            <UIcon name="i-lucide-hand-heart" class="size-4 text-white" />
+            <UIcon name="i-lucide-hand-heart" class="size-4 text-shell-text-strong" />
           </div>
-          <span class="text-sm tracking-tight text-white">Animapur CRM</span>
+          <span class="text-sm tracking-tight text-shell-text-strong">Animapur CRM</span>
         </div>
       </template>
 
@@ -67,36 +67,36 @@ const userMenuItems = computed<DropdownMenuItem[][]>(() => [
           orientation="vertical"
           :items="sidebarItems"
           :ui="{
-            link: 'text-white/70 hover:text-white hover:bg-white/10 data-[active]:text-white data-[active]:bg-transparent data-[active]:font-semibold relative data-[active]:before:absolute data-[active]:before:left-0 data-[active]:before:top-1 data-[active]:before:bottom-1 data-[active]:before:w-[3px] data-[active]:before:bg-white data-[active]:before:rounded-full',
-            linkLeadingIcon: 'text-white/50 group-data-[active]:text-white',
+            link: 'text-shell-text hover:text-shell-text-strong hover:bg-shell-hover data-[active]:text-shell-text-strong data-[active]:bg-transparent data-[active]:font-semibold relative data-[active]:before:absolute data-[active]:before:left-0 data-[active]:before:top-1 data-[active]:before:bottom-1 data-[active]:before:w-[3px] data-[active]:before:bg-shell-text-strong data-[active]:before:rounded-full',
+            linkLeadingIcon: 'text-shell-text-muted group-data-[active]:text-shell-text-strong',
           }"
         />
       </template>
 
       <template #footer>
-        <div class="px-4 pb-3 text-xs text-white/40">
+        <div class="px-4 pb-3 text-xs text-shell-text-muted">
           Animapur CRM v0.1.0
         </div>
       </template>
     </UDashboardSidebar>
 
     <!-- Main panel -->
-    <UDashboardPanel :ui="{ root: 'bg-slate-400', body: 'p-0! gap-0! flex-1' }">
+    <UDashboardPanel :ui="{ root: 'bg-shell', body: 'p-0! gap-0! flex-1' }">
       <template #header>
         <UDashboardNavbar
           :ui="{
-            root: 'h-12 bg-slate-400 border-b-0',
+            root: 'h-12 bg-shell border-b-0',
           }"
         >
           <template #leading>
             <div class="flex items-center gap-3">
-              <UDashboardSidebarCollapse class="text-white/70!" />
+              <UDashboardSidebarCollapse class="text-shell-text!" />
               <nav class="flex items-center gap-1 text-sm">
                 <template v-for="(crumb, i) in breadcrumbs" :key="i">
                   <UIcon
                     v-if="i > 0"
                     name="i-lucide-chevron-right"
-                    class="size-3.5 text-white/40 shrink-0"
+                    class="size-3.5 text-shell-text-muted shrink-0"
                   />
                   <UButton
                     v-if="crumb.to && i < breadcrumbs.length - 1"
@@ -106,9 +106,9 @@ const userMenuItems = computed<DropdownMenuItem[][]>(() => [
                     size="xs"
                     :label="crumb.label"
                     :padded="false"
-                    class="text-white/60!"
+                    class="text-shell-text!"
                   />
-                  <span v-else class="font-medium text-white">{{ crumb.label }}</span>
+                  <span v-else class="font-medium text-shell-text-strong">{{ crumb.label }}</span>
                 </template>
               </nav>
             </div>
@@ -121,7 +121,7 @@ const userMenuItems = computed<DropdownMenuItem[][]>(() => [
                 color="neutral"
                 variant="ghost"
                 size="sm"
-                class="text-white/70! hover:text-white! hover:bg-white/10!"
+                class="text-shell-text! hover:text-shell-text-strong! hover:bg-shell-hover!"
               />
               <UDropdownMenu
                 :items="userMenuItems"
@@ -131,10 +131,10 @@ const userMenuItems = computed<DropdownMenuItem[][]>(() => [
                 <UButton
                   color="neutral"
                   variant="ghost"
-                  class="hover:bg-white/10!"
+                  class="hover:bg-shell-hover!"
                 >
                   <div
-                    class="size-8 rounded-full bg-white/20 text-white text-xs font-semibold flex items-center justify-center"
+                    class="size-8 rounded-full bg-shell-active text-shell-text-strong text-xs font-semibold flex items-center justify-center"
                   >
                     U
                   </div>
@@ -146,7 +146,7 @@ const userMenuItems = computed<DropdownMenuItem[][]>(() => [
       </template>
 
       <template #body>
-        <div class="flex-1 min-h-0 mt-3 ml-3 bg-slate-50 border border-slate-300/50 rounded-tl-[15px] rounded-tr-none rounded-bl-none rounded-br-none shadow-sm overflow-y-auto">
+        <div class="flex-1 min-h-0 mt-3 ml-3 bg-surface border border-surface-border rounded-tl-[15px] rounded-tr-none rounded-bl-none rounded-br-none shadow-sm overflow-y-auto">
           <RouterView />
         </div>
       </template>

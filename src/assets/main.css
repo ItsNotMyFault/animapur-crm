@@ -1,2 +1,17 @@
 @import 'tailwindcss';
 @import '@nuxt/ui';
+
+@theme {
+  /* ── Shell colors ─────────────────────────────────────── */
+  --color-shell: #94a3b8;           /* slate-400 — sidebar & header bg */
+  --color-shell-hover: rgba(255, 255, 255, 0.1);
+  --color-shell-active: rgba(255, 255, 255, 0.15);
+
+  --color-shell-text: rgba(255, 255, 255, 0.7);
+  --color-shell-text-muted: rgba(255, 255, 255, 0.5);
+  --color-shell-text-strong: #ffffff;
+
+  /* ── Surface colors (content card) ────────────────────── */
+  --color-surface: #e2e8f0;         /* slate-200 — main card bg */
+  --color-surface-border: rgba(148, 163, 184, 0.3);
+}
